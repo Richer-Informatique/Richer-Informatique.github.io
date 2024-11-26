@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="styles.css">
+	<!-- Inclure la bibliothèque EmailJS -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("4Bdrjid1PS5eEM0OQ");  // Remplace par ta clé API EmailJS
+        })();
+        
+        function sendEmail(event) {
+            event.preventDefault();  // Empêche le rechargement de la page après soumission du formulaire
+            var form = document.getElementById('contact-form');  // Récupère le formulaire
+            emailjs.sendForm("service_v4ms57v","template_xsfbssi", form)
+                .then(function(response) {
+                    alert('Message envoyé avec succès');
+                    form.reset();  // Réinitialise le formulaire après soumission
+                }, function(error) {
+                    alert('Erreur: ' + error);
+                });
+        }
+    </script>
+	
+</head>
+<body>
+    <header>
+        <h1>Contactez-nous</h1>
+    </header>
+	
+	<nav class="navbar">
+        <a href="index.html">Accueil</a>
+        <a href="services.html">Services</a>
+		<a href="https://richer-informatique.blogspot.com">Base de connaissances</a>
+		<a href="https://discord.gg/zHBUd4qz2x" target="_blank">Communauté</a>
+		<a href="about.html">Qui suis-je ?</a>
+		<a href="contact.html">Contactez-nous</a>
+    </nav>
+	
+    <main class="container">
+        
+
+        <!-- Boutons pour appel et courriel -->
+        <section class="main-content">
+            <h2>Contact direct</h2>
+            <div class="sidebar-2">
+                <a href="tel:+14504218792">
+					<img src="images/telephone.png" alt="Telephone" style="width: 453px; height: auto;">
+				</a>
+                <a href="mailto:richer-anctil@hotmail.ca">
+					<img src="images/mail.png" alt="Email" style="width: 445px; height: auto;">
+				</a>
+            </div>
+        </section>
+
+        <!-- Bouton pour Anydesk -->
+        <section class="main-content">
+            <h2>Dpépannage à distance</h2>
+            <p>
+                Pour un dépannage à distance, vous allez avoir besoin de l'application <strong>Anydesk</strong> sur votre appareil.
+            </p>
+            <a href="https://anydesk.com/fr/downloads/windows" target="_blank">
+					<h2 style="text-align: center;">
+						<img src="images/Click_Anydesk.png" alt="Bouton" style="width: auto; height: auto;">
+					</h2>
+			</a>
+			<div class="separator" style="clear: both; text-align: center;"> En cliquant sur le bouton ci-dessus, vous téléchargerez <strong>AnyDesk</strong>, un logiciel de confiance qui permet à un technicien de vous assister à distance. Si, pour une raison quelconque, <strong>AnyDesk</strong> ne fonctionne pas sur votre ordinateur, vous pouvez également essayer l'alternative <strong>TeamViewer</strong>, disponible en cliquant <a href="https://download.teamviewer.com/download/TeamViewerQS.exe"><b><strong>ICI</strong></b></a> </div>
+        </section>
+
+
+        <!-- Formulaire de contact -->
+        <section class="main-content">
+            <h2>Formulaire de contact</h2>
+            <form id="contact-form" onsubmit="sendEmail(event)" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="from_name">Nom :</label>
+                    <input type="text" name="from_name" id="from_name" placeholder="Votre nom" required>
+                </div>
+                <div class="form-group">
+                    <label for="from_email">Adresse courriel :</label>
+                    <input type="from_email" id="from_email" name="from_email" id="from_email" placeholder="Votre adresse courriel" required>
+                </div>
+				<div class="form-group">
+                    <label for="phone">Numéro de téléphone :</label>
+                    <input type="from_phone" id="from_phone" name="from_phone" id="from_phone" placeholder="Votre numéro de téléphone">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message :</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Écrivez votre message ici..." required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Envoyer</button>
+            </form>
+        </section>
+    </main>
+    <div class="attribution">
+    <p>&copy; 2018 Richer Informatique. Tous droits réservés.</p>
+</div>
+</body>
+</html>

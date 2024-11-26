@@ -62,14 +62,13 @@ header h1 {
 }
 
 .main-content {
-    max-width: 700px; /* Augmente la largeur maximale */
+    max-width: 600px;
     width: 100%;
-    padding: 20px; /* Plus d'espace autour du contenu */
+    padding: 10px;
     background: rgba(30, 30, 30, 0.9); 
-    margin: 10px auto; /* Centrage horizontal avec des marges */
+    margin: 10px;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); /* Légèrement plus d'ombre pour un effet de profondeur */
-    box-sizing: border-box; /* Inclut les bordures et marges dans la taille totale */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
 }
 
 .sidebar {
@@ -107,7 +106,9 @@ footer {
 .attribution {
     text-align: center;
     padding: 5px;
-}
+	bottom: 0;
+	position: fixed;
+	margin-left: 40.3%;
 
 img {
     max-width: 100%;
@@ -117,57 +118,6 @@ img {
 
 img:hover {
     opacity: 0.8;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    margin-bottom: 5px;
-    font-weight: 500;
-    color: #ffffff;
-}
-
-input, textarea {
-    padding: 10px;
-    border: 1px solid #666;
-    border-radius: 5px;
-    background: #2e2e2e;
-    color: #ffffff;
-    font-size: 16px;
-}
-
-input::placeholder, textarea::placeholder {
-    color: #aaa;
-}
-
-input:focus, textarea:focus {
-    outline: none;
-    border-color: #0065fd;
-    box-shadow: 0 0 5px #0065fd;
-}
-
-.submit-button {
-    padding: 10px 20px;
-    background: #0065fd;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.submit-button:hover {
-    background: #004bb5;
 }
 
 @media (max-width: 768px) {
@@ -262,11 +212,6 @@ input:focus, textarea:focus {
 
     .sidebar-content {
         font-size: 14px; /* Texte plus compact */
-    }
-	
-	.main-content {
-        max-width: 95%; /* Réduit la largeur maximale sur les petits écrans */
-        padding: 15px; /* Réduit le padding pour les appareils plus petits */
     }
 	
     img {
